@@ -12,14 +12,16 @@
       background: #f5f5f7;
       color: #111827;
     }
-    .page {
-      max-width: 900px;
-      margin: 0 auto;
-      background: #ffffff;
-      padding: 32px 28px;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
-    }
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 32px 28px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+  position: relative; /* ← ADD THIS */
+}
+
     h1 {
       margin: 0 0 4px;
       font-size: 28px;
@@ -85,24 +87,26 @@
       background: #1f2937;
       text-decoration: none;
     }
+    
   </style>
 </head>
 
 <body>
 
   <main class="page">
-    <!-- SAIT Logo inside the card (top-right) -->
+<!-- SAIT Logo inside the white card -->
 <div style="
   position: absolute;
-  top: 32px;
-  right: 32px;
+  top: 16px;
+  right: 16px;
 ">
   <img 
     src="sait_icon_wordmark_vert_colour.png" 
     alt="SAIT Logo" 
-    style="width: 90px;"
+    style="width: 80px;"
   >
 </div>
+
 
     <h1>Tinkersculpt</h1>
     <div class="subtitle">Links</div>
