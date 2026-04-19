@@ -8,124 +8,147 @@
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       margin: 0;
-      padding: 24px;
+      padding: 16px;
       background: #f5f5f7;
       color: #111827;
     }
-.page {
-  max-width: 900px;
-  margin: 0 auto;
-  background: #ffffff;
-  padding: 48px 28px 32px; /* increased top padding */
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
-  position: relative;
-}
 
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px 24px 32px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+    }
+
+    /* ── HEADER ROW ── */
+    .header-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .header-text {
+      flex: 1;
+      min-width: 0; /* allows text to shrink */
+    }
+
+    .sait-logo {
+      width: 72px;
+      flex-shrink: 0;
+    }
 
     h1 {
       margin: 0 0 4px;
-      font-size: 28px;
+      font-size: clamp(22px, 5vw, 28px);
       letter-spacing: 0.02em;
     }
+
     .subtitle {
       font-weight: 600;
       color: #6b7280;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
+      line-height: 1.5;
+      font-size: clamp(13px, 3vw, 15px);
     }
+
     .date {
-      font-size: 14px;
+      font-size: 13px;
       color: #9ca3af;
-      margin-bottom: 24px;
+      margin-bottom: 0;
     }
+
+    /* ── SECTIONS ── */
     h2 {
-      font-size: 18px;
+      font-size: clamp(15px, 4vw, 18px);
       margin-top: 24px;
       margin-bottom: 8px;
     }
+
     a {
       color: #2563eb;
       text-decoration: none;
+      word-break: break-all;
     }
-    a:hover {
-      text-decoration: underline;
-    }
+
+    a:hover { text-decoration: underline; }
+
     .section {
       margin-bottom: 20px;
     }
+
+    /* ── PERSON CARDS ── */
     .person {
       border-top: 1px solid #e5e7eb;
       padding-top: 16px;
       margin-top: 16px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
     }
+
+    .profile-img {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    .person-info {
+      flex: 1;
+      min-width: 0;
+    }
+
     .person-name {
       font-weight: 600;
-      font-size: 16px;
+      font-size: clamp(14px, 3.5vw, 16px);
     }
+
     .person-role {
-      font-size: 14px;
+      font-size: 13px;
       color: #6b7280;
       margin-bottom: 4px;
     }
-    .profile-img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 10px;
-      display: block;
-    }
-    .pdf-link {
-      display: inline-block;
-      margin-top: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: #111827;
-      color: #f9fafb;
-      font-size: 14px;
-    }
-    .pdf-link:hover {
-      background: #1f2937;
-      text-decoration: none;
-    }
-    .text-block {
-  max-width: 800px;
-  line-height: 1.5;
-}
 
-    
+    .person-info div {
+      font-size: clamp(12px, 3vw, 14px);
+      margin-bottom: 2px;
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 10px; }
+      .page { padding: 16px 14px 24px; border-radius: 8px; }
+      .sait-logo { width: 56px; }
+      .profile-img { width: 52px; height: 52px; }
+    }
   </style>
 </head>
 
 <body>
-
   <main class="page">
-<!-- SAIT Logo inside the white card -->
-<div style="
-  position: absolute;
-  top: 16px;
-  right: 16px;
-">
-  <img 
-    src="sait_icon_wordmark_vert_colour.png" 
-    alt="SAIT Logo" 
-    style="width: 80px;"
-  >
-</div>
 
+    <!-- HEADER: title + SAIT logo side by side, no overlap -->
+    <div class="header-row">
+      <div class="header-text">
+        <h1>Tinkersculpt</h1>
+        <div class="subtitle">
+          A web-based tool built for Capstone Dynamics that helps teams plan and track
+          how their people's time is being used across projects.
+          See who is assigned to what and how much capacity they have available.
+          Track initiatives from creation through to completion.
+          View monthly allocation breakdowns by team member and category.
+          Role-based access for Resource Managers, Stakeholders, and Team Members.
+        </div>
+        <div class="date">2026/04/22</div>
+      </div>
+      <img src="sait_icon_wordmark_vert_colour.png" alt="SAIT Logo" class="sait-logo" />
+    </div>
 
-    <h1>Tinkersculpt</h1>
-    <div class="subtitle text-block">
-  A web-based tool built for Capstone Dynamics that helps teams plan and track how their people's time is being used across projects.
-
-  See who is assigned to what and how much capacity they have available.
-  Track initiatives from creation through to completion.
-  View monthly allocation breakdowns by team member and category.
-  Role-based access for Resource Managers, Stakeholders, and Team Members.
-</div>
-
-    <div class="date">2026/04/22</div>
-
+    <!-- APP LINKS -->
     <section class="section">
       <h2>Resource and Capacity Management App</h2>
       <div>
@@ -145,55 +168,67 @@
     <!-- JACKSON -->
     <section class="section person">
       <img src="Jackson.png" alt="Jackson Battista" class="profile-img" />
-      <div class="person-name">Jackson Battista</div>
-      <div class="person-role">Team Lead · Full Stack Developer</div>
-      <div><strong>LinkedIn:</strong> <a href="http://www.linkedin.com/in/jackson-battista" target="_blank">linkedin.com/in/jackson-battista</a></div>
-      <div><strong>GitHub:</strong> <a href="https://github.com/Jack8971" target="_blank">Jack8971</a></div>
+      <div class="person-info">
+        <div class="person-name">Jackson Battista</div>
+        <div class="person-role">Team Lead · Full Stack Developer</div>
+        <div><strong>LinkedIn:</strong> <a href="http://www.linkedin.com/in/jackson-battista" target="_blank">linkedin.com/in/jackson-battista</a></div>
+        <div><strong>GitHub:</strong> <a href="https://github.com/Jack8971" target="_blank">Jack8971</a></div>
+      </div>
     </section>
 
     <!-- JARED -->
     <section class="section person">
       <img src="Jared.png" alt="Jared Gutierrez" class="profile-img" />
-      <div class="person-name">Jared Gutierrez</div>
-      <div class="person-role">Frontend Developer</div>
-      <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jared-gutierrez-914396382?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">linkedin.com/in/jared-gutierrez</a></div>
-      <div><strong>GitHub:</strong> <a href="https://github.com/Jaredg01" target="_blank">JaredJ01</a></div>
+      <div class="person-info">
+        <div class="person-name">Jared Gutierrez</div>
+        <div class="person-role">Frontend Developer</div>
+        <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jared-gutierrez-914396382" target="_blank">linkedin.com/in/jared-gutierrez</a></div>
+        <div><strong>GitHub:</strong> <a href="https://github.com/Jaredg01" target="_blank">JaredJ01</a></div>
+      </div>
     </section>
 
     <!-- HUY -->
     <section class="section person">
       <img src="Huy.png" alt="Huy Huynh" class="profile-img" />
-      <div class="person-name">Huy Huynh</div>
-      <div class="person-role">Backend · Frontend</div>
-      <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/phathuy" target="_blank">linkedin.com/in/phathuy</a></div>
-      <div><strong>GitHub:</strong> <a href="https://github.com/phathuy" target="_blank">phathuy</a></div>
+      <div class="person-info">
+        <div class="person-name">Huy Huynh</div>
+        <div class="person-role">Backend · Frontend</div>
+        <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/phathuy" target="_blank">linkedin.com/in/phathuy</a></div>
+        <div><strong>GitHub:</strong> <a href="https://github.com/phathuy" target="_blank">phathuy</a></div>
+      </div>
     </section>
 
     <!-- JASHANPREET -->
     <section class="section person">
       <img src="Jashanpreet.png" alt="Jashanpreet" class="profile-img" />
-      <div class="person-name">Jashanpreet</div>
-      <div class="person-role">Frontend</div>
-      <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jashanpreet-kaur-290333400?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank">linkedin.com/in/jashanpreet-kaur</a></div>
-      <div><strong>GitHub:</strong> <a href="https://github.com/jashan478" target="_blank">jashan478</a></div>
+      <div class="person-info">
+        <div class="person-name">Jashanpreet</div>
+        <div class="person-role">Frontend</div>
+        <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jashanpreet-kaur-290333400" target="_blank">linkedin.com/in/jashanpreet-kaur</a></div>
+        <div><strong>GitHub:</strong> <a href="https://github.com/jashan478" target="_blank">jashan478</a></div>
+      </div>
     </section>
 
     <!-- LEO -->
     <section class="section person">
       <img src="Leo.png" alt="Leo Mathew" class="profile-img" />
-      <div class="person-name">Leo Mathew</div>
-      <div class="person-role">Backend</div>
-      <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/leokmathew/" target="_blank">linkedin.com/in/leo-mathew</a></div>
-      <div><strong>GitHub:</strong> <a href="https://github.com/Leomathew25" target="_blank">leomathew25</a></div>
+      <div class="person-info">
+        <div class="person-name">Leo Mathew</div>
+        <div class="person-role">Backend</div>
+        <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/leokmathew/" target="_blank">linkedin.com/in/leo-mathew</a></div>
+        <div><strong>GitHub:</strong> <a href="https://github.com/Leomathew25" target="_blank">leomathew25</a></div>
+      </div>
     </section>
 
     <!-- MISHTI -->
     <section class="section person">
       <img src="Mishti.png" alt="Mishti" class="profile-img" />
-      <div class="person-name">Mishti</div>
-      <div class="person-role">Frontend</div>
-      <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mishti-mishti-9b2001340" target="_blank">linkedin.com/in/mishti</a></div>
-      <div><strong>GitHub:</strong> <a href="https://github.com/Mishti3678" target="_blank">Mishti3678</a></div>
+      <div class="person-info">
+        <div class="person-name">Mishti</div>
+        <div class="person-role">Frontend</div>
+        <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mishti-mishti-9b2001340" target="_blank">linkedin.com/in/mishti</a></div>
+        <div><strong>GitHub:</strong> <a href="https://github.com/Mishti3678" target="_blank">Mishti3678</a></div>
+      </div>
     </section>
 
   </main>
