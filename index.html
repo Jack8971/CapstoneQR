@@ -16,11 +16,12 @@
   max-width: 900px;
   margin: 0 auto;
   background: #ffffff;
-  padding: 32px 28px;
+  padding: 48px 28px 32px; /* increased top padding */
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
-  position: relative; /* ← ADD THIS */
+  position: relative;
 }
+
 
     h1 {
       margin: 0 0 4px;
@@ -87,6 +88,11 @@
       background: #1f2937;
       text-decoration: none;
     }
+    .text-block {
+  max-width: 600px;
+  line-height: 1.5;
+}
+
     
   </style>
 </head>
@@ -109,12 +115,15 @@
 
 
     <h1>Tinkersculpt</h1>
-    <div class="subtitle">A web-based tool built for Capstone Dynamics that helps teams plan and track how their people's time is being used across projects.
+    <div class="subtitle text-block">
+  A web-based tool built for Capstone Dynamics that helps teams plan and track how their people's time is being used across projects.
 
-See who is assigned to what and how much capacity they have available
-Track initiatives from creation through to completion
-View monthly allocation breakdowns by team member and category
-Role-based access for Resource Managers, Stakeholders, and Team Members</div>
+  See who is assigned to what and how much capacity they have available.
+  Track initiatives from creation through to completion.
+  View monthly allocation breakdowns by team member and category.
+  Role-based access for Resource Managers, Stakeholders, and Team Members.
+</div>
+
     <div class="date">2026/04/22</div>
 
     <section class="section">
